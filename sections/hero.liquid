@@ -1,1 +1,58 @@
-{% section 'snippet' %}
+<section class="inner-hero-section">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1>{{ section.settings.title }}</h1>
+        {{ section.settings.description }}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="btn btn-secondary"
+          >{{ section.settings.button_label }}</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%}
+<!-- prettier-ignore -->
+{%- endcomment -%}
+{% schema %} { 
+    "name": "Hero", 
+    "class": "hero-section", 
+    "settings": [ 
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Heading Background Title"
+    },
+    { 
+        "type":"text", 
+        "id": "title", 
+        "label": "Heading Title", 
+        "default": "Example Heading" 
+    },
+    {
+        "type": "text",
+         "id": "button_label",
+        "label": "Heading Button Label",
+        "default": "Button"
+    },
+    {
+        "type": "url",
+        "id": "button_link",
+        "label": "Heading Button Link"
+    },
+    {
+        "type": "text",
+        "id": "description",
+        "default": "example",
+        "label": "heading description"
+    }
+],
+ "presets": [ 
+    { 
+     "name": { "en": "Simple Hero" } 
+    } 
+] 
+} {% endschema %}
