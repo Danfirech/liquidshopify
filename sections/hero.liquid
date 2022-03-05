@@ -3,6 +3,7 @@
   <image src="{{section.settings.image | img_url }}" alt="">
     {%else%}
     {%capture currrent%}{%cycle 1,2%}{%endcapture%}
+    {{placeholder_svg_tag: 'placeholder-svg'}}
   {%endif%}
 
 
