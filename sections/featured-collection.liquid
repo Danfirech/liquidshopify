@@ -1,0 +1,37 @@
+<section class="container">
+  {% for product in collections[section.settings.featured_collection].products
+  %}
+  {{ product.title }}
+  {% endfor %}
+</section>
+
+{%- comment -%}
+<!-- prettier-ignore -->
+{%- endcomment -%}
+
+{% schema %}
+{
+    "name": "Featured Collection",
+    "class": "Featured-Collection-section",
+    "settings": [
+    {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Collection"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "default": "Featured collection",
+        "label": "Title"
+    }
+    ],
+
+    "presets": [
+        {
+            "category": "collection",
+            "name": "Featured Collection"
+        }
+    ] 
+}
+{% endschema %}
