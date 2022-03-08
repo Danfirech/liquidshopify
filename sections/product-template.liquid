@@ -51,11 +51,28 @@ product.featured_image %}
       >
         Add To Cart
       </button>
+      {% if section.settings.dynamic_checkbox == true %}
+      {{form | payment_button}}
+      {% endif %}
 
       {{form | payment_button}}
       {%endform%}
     </div>
   </div>
 </div>
+
+{% schema %}
+{
+ "name": "Product pages",
+ "settings": [
+ {
+"type": "checkbox",
+"id": "dynamic_buttons_checkbox",
+"label": "Enable Dynamic Buttons",
+"default": false
+ }
+ ]
+}
+{% endschema %}
 
 
